@@ -5,6 +5,7 @@ import './App.css'
 
 function App() {
   const inputref=useRef(null);
+  const h1ref=useRef(null);
   const inputhandler=()=>{
     console.log(inputref)
     inputref.current.focus();
@@ -24,6 +25,12 @@ const togglehandler=()=>{
       inputref.current.style.display='inline'
     }
 
+
+}
+
+const h1handler=()=>{
+  h1ref.current.style.color='green';
+
 }
 
   return (
@@ -31,6 +38,8 @@ const togglehandler=()=>{
     <button onClick={togglehandler}>toggle</button>
     <input type="text" ref={inputref} placeholder='user name' />
     <button onClick={inputhandler}>focus on input</button>
+    <h1 ref={h1ref}>hello megha</h1>
+    <button onClick={h1handler}>handler</button>
      
     </>
   )
