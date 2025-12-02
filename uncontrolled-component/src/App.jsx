@@ -1,33 +1,47 @@
-import { useState } from 'react'
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useRef } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const users=useRef();
+  const passwords=useRef();
+  const handleform=(e)=>{
+    e.preventDefault();
+    const user=document.querySelector("#user").value;
+    const password=document.querySelector("#password").value;
+    console.log(user,password);
+  }
+    const handleformref=(e)=>{
+    e.preventDefault();
+    // console.log("hndle");
+   const user=users.current.value;
+   const password=passwords.current.value;
+     console.log("hndle",user,password);
+  }
+  
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <h1>uncontrolled component</h1>
+    <form  onSubmit={handleform}>
+      <input type="text" id='user' placeholder='enter user name' />
+      <br /><br />
+      <input type="password" id='password' placeholder='enter user password' />
+      <br /><br />
+      <button>submit</button>
+    </form>
+    <hr />
+     <h1>uncontrolled component with useref</h1>
+    <form  onSubmit={handleformref}>
+      <input type="text" id='user' ref={users} placeholder='enter user name' />
+      <br /><br />
+      <input type="password" id='password' ref={passwords} placeholder='enter user password' />
+      <br /><br />
+      <button>submit with ref</button>
+    </form>
+    
     </>
   )
 }
