@@ -12,9 +12,9 @@ function App() {
 
   return (
     <>
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <Link to="/login">Login</Link>
+    <Link to="/"><h1>Home</h1></Link>
+    <Link to="/about"><h1>About</h1></Link>
+    <Link to="/login"><h1>Login</h1></Link>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
