@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import "./style.css";
 
 export default function Navbar() {
   return (
-    <div className='header'>
+  <div>
+      <div className='header'>
         <div>
     <Link style={{textDecoration:"none"}}><h2 className='link'>Logo</h2></Link>
    
@@ -15,14 +16,20 @@ export default function Navbar() {
                     <Link className='link' to="/">Home</Link>
                 </li>
                 <li>
-                    <Link className='link' to="/login">Login</Link>
+                    <Link className='link' to="/in/user/login">Login</Link>
                 </li>
                 <li>
-                    <Link className='link' to="/about">About</Link>
+                    <Link className='link' to="/in/user/about">About</Link>
                 </li>
+                 <li>
+                    <Link className='link' to="/college">College</Link>
+                </li>
+                
             </ul>
 
         </div>
     </div>
+    <Outlet/>
+  </div>
   )
 }
