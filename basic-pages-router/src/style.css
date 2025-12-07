@@ -1,0 +1,32 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(226, 166, 166);
+    padding: 10px;
+}
+ul
+{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 250px;
+    align-items: center;
+    
+}
+ul li .link 
+{
+
+
+    text-decoration: none;
+  
+
+}
