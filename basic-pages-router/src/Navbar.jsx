@@ -7,7 +7,7 @@ export default function Navbar() {
   <div>
       <div className='header'>
         <div>
-    <Link style={{textDecoration:"none"}}><h2 className='link'>Logo</h2></Link>
+    <Link to="/" style={{textDecoration:"none"}}><h2 className='link'>Logo</h2></Link>
    
         </div>
         <div>
@@ -23,6 +23,9 @@ export default function Navbar() {
                 </li>
                  <li>
                     <Link className='link' to="/college">College</Link>
+                </li>
+                 <li>
+                    <Link className='link' to="/users">users</Link>
                 </li>
                 
             </ul>

@@ -12,6 +12,8 @@ import College from './College'
 import Students from './Students'
 import Department from './Department'
 import Details from './Details'
+import Users from './Users'
+import Userdetails from './Userdetails'
 
 function App() {
   
@@ -22,6 +24,8 @@ function App() {
     <Routes>
       <Route element={<Navbar/>}>
        <Route path='/' element={<Home/>}/>
+       <Route path='/users' element={<Users/>}/>
+       <Route path='/users/:id' element={<Userdetails/>}/>
        
             
     <Route path="in">
