@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "name": "abc",
+      "age": 18,
+      "email": "abc@gmail.com",
+      "id": "5143"
+    },
+    {
+      "name": "xyz",
+      "age": 19,
+      "email": "xyz@gmail.com",
+      "id": "c570"
+    },
+    {
+      "name": "mno",
+      "age": 20,
+      "email": "mno@gmail.com",
+      "id": "1045"
+    },
+    {
+      "name": "poi",
+      "age": 22,
+      "email": "poi@gmail.com",
+      "id": "58e5"
+    },
+    {
+      "id": "6337",
+      "name": "klm",
+      "age": 16,
+      "email": "klm@gmail.com"
+    },
+    {
+      "id": "1e30",
+      "name": "megha",
+      "age": "52",
+      "email": "megha@gmail.com"
+    }
+  ]
+}
