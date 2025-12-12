@@ -3,6 +3,7 @@ import Userlist from './Userlist'
 // import Adduser from './Adduser'
 import {Routes,Route,NavLink} from 'react-router-dom'
 import Adduser from './Adduser'
+import Edituser from './Edituser'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
    <Routes>
     <Route path='/' element={<Userlist/>}/>
     <Route path='/add' element={<Adduser/>}/>
+    <Route path='/edit/:id' element={<Edituser/>}/>
    </Routes>
     </div>
   )
