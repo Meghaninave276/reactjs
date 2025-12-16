@@ -71,3 +71,22 @@ body {
 .add-cart:hover {
   background: #333;
 }
+
+.remove-cart
+{
+  width: 100%;
+  padding: 12px;
+ 
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  background-color: rgb(235, 81, 81);
+ margin-top: 20px;
+}
+.remove-cart:hover
+{
+  background-color: rgb(207, 48, 48);
+}

@@ -14,11 +14,19 @@ const addtocart=createSlice({
         additem:(state)=>{
             state.value+=1;
 
-        }
+        },
+        removeitem:(state)=>{
+           state.value>0? state.value-=1:null;
+
+        },
+        clearitem:(state)=>{
+            state.value=0;
+
+        },
 
     }
 })
 
 
 export default addtocart.reducer;
-export const {additem}=addtocart.actions
+export const {additem,removeitem,clearitem}=addtocart.actions

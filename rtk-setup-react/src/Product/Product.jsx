@@ -2,7 +2,7 @@ import React from 'react'
 import "./Product.css"
 import {useDispatch,useSelector} from 'react-redux'
 
-import { additem } from '../redux/slice';
+import { additem, removeitem } from '../redux/slice';
 
 export default function Product() {
   const dispatch=useDispatch();
@@ -28,6 +28,7 @@ export default function Product() {
           professionals.
         </p>
         <button className="add-cart" onClick={()=>dispatch(additem(1))}>Add to Cart</button>
+        <button className="remove-cart" onClick={()=>dispatch(removeitem(1))} >Remove from Cart</button>
 
         {/* Quantity */}
         
