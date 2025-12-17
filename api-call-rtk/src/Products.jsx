@@ -13,6 +13,8 @@ export default function Products() {
     const selector=useSelector((state)=>state.products.items);
     console.log(selector)
   return (
-    <div></div>
+    <div>
+      
+    </div>
   )
 }
