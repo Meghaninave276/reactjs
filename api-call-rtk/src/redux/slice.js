@@ -3,13 +3,13 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 
 export const fetchapi=createAsyncThunk("products",async()=>{
     const res= await fetch("https://dummyjson.com/products");
-    res=await res.json();
-    return res.products;
+    const data=await res.json();
+    return data.products;
 
 });
 
 const pslice=createSlice({
-    name:"prouct",
+    name:"proucts",
     initialState:{
         items:[],
         status:undefined,
