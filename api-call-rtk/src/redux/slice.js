@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 
 
+
 export const fetchapi=createAsyncThunk("products",async()=>{
     const res= await fetch("https://dummyjson.com/products");
     const data=await res.json();
@@ -9,12 +10,30 @@ export const fetchapi=createAsyncThunk("products",async()=>{
 });
 
 const pslice=createSlice({
-    name:"proucts",
+    name:"products",
     initialState:{
         items:[],
         status:undefined,
-        error:null
+        error:null,
+        value:0,
+         cart:localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")):[],
     },
+    reducers:{
+        additem:(state,action)=>{
+            state.value+=1;
+          
+             console.log(action.payload);
+            state.cart.push(action.payload);
+            localStorage.setItem("cart",JSON.stringify(state.cart));
+        },
+        removeitem:(state,action)=>{
+            const cartsdata=state.cart.filter(c=>c.id!=action.payload.id)
+            state.cart=cartsdata;
+            localStorage.setItem("cart",JSON.stringify(cartsdata));
+
+        }
+    },
+ 
     extraReducers:(builder)=>{
         builder.addCase(fetchapi.fulfilled,(state,action)=>{
             state.status="succeed",
@@ -25,3 +44,4 @@ const pslice=createSlice({
     }
 })
 export default pslice.reducer;
+export const {additem,removeitem}=pslice.actions;

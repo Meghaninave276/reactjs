@@ -74,7 +74,7 @@
 }
 
 /* Add to cart button */
-.btn {
+#button {
   margin-top: 12px;
   padding: 10px 14px;
   border-radius: 12px;
@@ -88,12 +88,20 @@
 }
 
 /* Button hover */
-.btn:hover {
+#button :hover {
   background: linear-gradient(135deg, #764ba2, #667eea);
   transform: scale(1.05);
 }
 
 /* Button click */
-.btn:active {
+#button :active {
   transform: scale(0.97);
+}
+.btn-disabled
+{
+  background-color: gainsboro;
+}
+.btn-disabled:hover
+{
+  background-color: gainsboro;
 }
