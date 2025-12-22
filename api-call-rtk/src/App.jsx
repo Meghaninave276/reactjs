@@ -4,6 +4,9 @@ import viteLogo from '/vite.svg'
 import Products from './Products/Products'
 import Header from './Header'
 import './App.css'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Cartlist from './Cartlist/Cartlist'
+
 
 
 
@@ -12,8 +15,13 @@ function App() {
 
   return (
     <>
+   <BrowserRouter>
     <Header/>
- <Products/>
+<Routes>
+  <Route path='/' element={<Products/>}/>
+  <Route path='/cart' element={<Cartlist/>}/>
+</Routes>
+   </BrowserRouter>
     </>
   )
 }
