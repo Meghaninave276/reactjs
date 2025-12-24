@@ -31,7 +31,12 @@ const pslice=createSlice({
             state.cart=cartsdata;
             localStorage.setItem("cart",JSON.stringify(cartsdata));
 
-        }
+        },
+          clearAllitems:(state)=>{
+            state.items=[];
+
+          }
+
     },
  
     extraReducers:(builder)=>{
@@ -40,8 +45,9 @@ const pslice=createSlice({
             state.items=action.payload
 
         });
+      
 
     }
 })
 export default pslice.reducer;
-export const {additem,removeitem}=pslice.actions;
+export const {additem,removeitem,clearAllitems}=pslice.actions;

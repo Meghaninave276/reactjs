@@ -31,7 +31,7 @@ export default function Products() {
           <div className='rating'>{item.rating} </div>
           {
             cartselector.find(cartitem=>cartitem.id===item.id)?
-                 <button className='btn btn-danger' onClick={()=>dispatch(removeitem(item))} >remove from  cart</button>:
+                 <button className='btn btn-danger ' onClick={()=>dispatch(removeitem(item))} >remove from  cart</button>:
                       <button className='btn ' id='button' onClick={()=>dispatch(additem(item))}>add to cart</button>
             
           

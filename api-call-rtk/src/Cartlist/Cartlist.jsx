@@ -1,10 +1,21 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
+import {useNavigate} from "react-router-dom"
+import {clearAllitems, removeitem} from '../redux/slice'
 import "./Cartlist.css";
 
 export default function Cartlist() {
+  const dispatch=useDispatch();
+  const navigate=useNavigate();
  const cartlistselector=useSelector((state)=>state.products.cart);
  console.log(cartlistselector);
+ const handleplaceorder=()=>{
+  localStorage.clear();
+  dispatch(clearAllitems);
+  alert("order placed");
+  navigate("/");
+
+ }
   return (
     <div className='cart-container'>
       <div className='cart-header'>
@@ -25,7 +36,7 @@ export default function Cartlist() {
 
               <div className='item-action'>
                 <span className='price'>{item.price}</span>
-                <button className='btn'>remove</button>
+                <button className='btn' onClick={()=>dispatch((removeitem(item)))}>remove</button>
 
               </div>
 
@@ -41,6 +52,7 @@ export default function Cartlist() {
   </strong>
 </div>
 
+<button className='place-btn' onClick={handleplaceorder}>place order</button>
       
     </div>
   )
